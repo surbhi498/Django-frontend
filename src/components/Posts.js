@@ -67,7 +67,7 @@ const Posts = ({ token }) => {
     const getPosts = async () => {
       try {
         const response = await fetchPosts(token);
-        setPosts(response.data);
+        setPosts(response);
       } catch (error) {
         console.error('Error fetching posts:', error);
       }

@@ -39,3 +39,16 @@ const Login = ({ setToken }) => {
 };
 
 export default Login;
+// import React from 'react';
+// import LoginForm from './components/accountBox/loginForm'; // Adjust the import path as necessary
+
+// const Login = ({ setToken }) => {
+//   return (
+//     <div className="login-container">
+//       <h2>Login</h2>
+//       <LoginForm setToken={setToken} />
+//     </div>
+//   );
+// };
+
+// export default Login;
