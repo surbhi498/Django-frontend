@@ -59,10 +59,11 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPosts, likePost } from '../services/api';
 import '../index.css';
+import { useNavigate } from 'react-router-dom'; 
 
 const Posts = ({ token }) => {
   const [posts, setPosts] = useState([]);
-
+  const navigate = useNavigate(); 
   useEffect(() => {
     const getPosts = async () => {
       try {
@@ -92,10 +93,16 @@ const Posts = ({ token }) => {
       console.error('Error liking post:', error);
     }
   };
+  const handleCreatePost = () => {
+    navigate('/create-post'); // Navigate to the create post page
+  };
 
   return (
     <div className="posts-container">
-      <h2>Posts</h2>
+      <h2 style={{ color: 'white' }}>Posts</h2>
+      <button onClick={handleCreatePost} className="create-post-button">
+        Create Post
+      </button>
       <ul className="posts-list">
         {posts.map((post) => (
           <li key={post.id} className="post-item">

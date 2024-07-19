@@ -124,7 +124,7 @@ export default function AccountBox(props) {
   
   return (
   <AccountContext.Provider value={contextValue}>
-  <BoxContainer>
+  <div className="box">
     <TopContainer>
       <BackDrop 
         initial={false}
@@ -144,10 +144,11 @@ export default function AccountBox(props) {
       </HeaderContainer>}
     </TopContainer>
     <InnerContainer>
-    {active === "signin" && <LoginForm setToken={handleSetToken} />}
+    {/* {active === "signin" && <LoginForm setToken={handleSetToken} />} */}
+    {active === "signin" && <LoginForm setToken={props.setToken} />}
     {active === "signup" && <SignupForm />}
     </InnerContainer>
-  </BoxContainer>
+  </div>
   </AccountContext.Provider>  
   );
 }

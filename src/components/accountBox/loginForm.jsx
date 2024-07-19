@@ -38,7 +38,7 @@
 
 // src/components/accountBox/loginForm.jsx
 import React, { useContext, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import {
   BoldLink,
   BoxContainer,
@@ -64,8 +64,9 @@ const LoginForm = ({ setToken }) => {
     try {
       const response = await login({ username, password });
       console.log(response.data); // Check the response
-      setToken(response.data.access); // Set the access token
-      navigate('/posts');
+      // setToken(response.data.access); // Set the access token
+      setToken(response.data.access, username);
+      //navigate('/posts');
     } catch (error) {
       console.error('Login error:', error);
     }
@@ -77,7 +78,9 @@ const LoginForm = ({ setToken }) => {
         <Input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
         <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <Marginer direction="vertical" margin={10} />
+        <Link to="/password-reset">
         <MutedLink href="#">Forget your password?</MutedLink>
+        </Link>
         <Marginer direction="vertical" margin="1.6em" />
         <SubmitButton type="submit">Signin</SubmitButton>
       </FormContainer>
