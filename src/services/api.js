@@ -98,8 +98,8 @@
 
 import axios from 'axios';
 
-// const API_URL = 'http://3.16.70.225/api'; // Change this to your backend URL
-const API_URL = 'http://127.0.0.1:8000/api';
+const API_URL = 'http://3.130.72.191/api'; // Change this to your backend URL
+//const API_URL = 'http://127.0.0.1:8000/api';
 
 // Function to store tokens securely
 const storeTokens = (accessToken, refreshToken) => {
